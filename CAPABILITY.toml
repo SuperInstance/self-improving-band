@@ -1,0 +1,55 @@
+[crate]
+name = "self-improving-band"
+version = "0.1.0"
+layer = "music"
+description = "Self-improving musical arrangement system — generative music with evolutionary refinement"
+
+[provides]
+capabilities = [
+  { name = "musical_arrangement", type = "module", description = "Generative musical arrangement with multi-instrument coordination" },
+  { name = "evolutionary_refinement", type = "module", description = "Self-improvement loop: generate, evaluate, mutate, select better arrangements" },
+  { name = "band_coordination", type = "module", description = "Multi-agent band coordination with role assignment and harmonic constraints" },
+  { name = "music_theory", type = "module", description = "Scales, chords, progressions, and harmonic analysis utilities" }
+]
+exports = [
+  "docs::ARCHITECTURE",
+  "docs::AGI_VISION",
+  "examples::*"
+]
+
+[requires]
+optional = []
+
+[integrates.all_band_crates]
+crate = "*"
+module = "band_coordination"
+description = "Hub crate: integrates with all band-member crates for unified musical output"
+human_steps = [
+  "1. Read ARCHITECTURE.md for system overview",
+  "2. Explore examples/ for usage patterns",
+  "3. Run integration examples with all band crates"
+]
+agent_steps = [
+  "Read ARCHITECTURE.md for architectural understanding",
+  "Read AGI_VISION.md for long-term vision context",
+  "Explore examples/ directory for concrete usage patterns",
+  "Coordinate with individual band-member crates via their CAPABILITY.toml"
+]
+
+[onboarding.human]
+quick_start = "Read ARCHITECTURE.md and explore examples/"
+example = """
+# See examples/ directory for runnable demos
+# Architecture documented in ARCHITECTURE.md
+# Vision documented in AGI_VISION.md
+"""
+
+[onboarding.agent]
+context_needed = ["architecture_doc", "available_band_crates", "musical_style", "instrument_roles"]
+api_surface = [
+  "ARCHITECTURE.md — system design document",
+  "AGI_VISION.md — long-term vision",
+  "examples/ — runnable integration examples",
+  "docs/ — supplementary documentation"
+]
+integration_pattern = "Read ARCHITECTURE.md for system overview, discover band-member crates via their CAPABILITY.toml files, coordinate musical generation across all members, apply evolutionary refinement loop"
